@@ -1,0 +1,40 @@
+<section class="container">
+    <nav class="navbar">
+      <div class="navbar__logo">
+        <a href="#">
+          <img src="https://erp.mediaalacarte.net/web/image/website/1/logo/Media%20Alacarte?unique=07bbf5d" alt="Media AlaCarte Logo">
+        </a>
+      </div>
+      
+      <div class="navbar__toggle" (click)="toggleMenu()">
+        <span class="navbar__toggle-icon"></span>
+        <span class="navbar__toggle-icon"></span>
+        <span class="navbar__toggle-icon"></span>
+      </div>
+      
+      <ul class="navbar__links" [class.navbar__links--active]="isMenuOpen">
+        <li class="navbar__item">
+          <a href="#" class="navbar__link">The Platform</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#" class="navbar__link">Features</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#" class="navbar__link">Benefits</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#" class="navbar__link">Request a Demo</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#" class="navbar__link">Contact Us</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#" class="navbar__link">About Us</a>
+        </li>
+      </ul>
+      
+      <div class="navbar__action">
+        <button class="navbar__button">Login</button>
+      </div>
+    </nav>
+  </section>

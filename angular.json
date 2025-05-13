@@ -39,8 +39,13 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/app/styles/main.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/app/styles"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -105,5 +110,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

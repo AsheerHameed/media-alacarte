@@ -1,0 +1,11 @@
+@forward './abstracts/variables';
+@forward './abstracts/mixins';
+@forward './base/typography';
+@forward './base/buttons';
+
+html{
+    font-size: 62.5%;
+}
+body{
+    margin: 0;
+}
