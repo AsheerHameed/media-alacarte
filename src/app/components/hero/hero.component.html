@@ -10,34 +10,14 @@
     </div>
   </div>
 
-  <!-- <div class="hero__bottom">
-  <button class="hero__cta-button">Start your journey!</button>
-
-    <img
-      src="assets/images/hero/hero.jpg"
-      alt="Team celebrating success"
-      class="hero__image"
-    />
-    <div class="hero__overlay">
-      <button class="hero__learn-more">
-        <span class="hero__learn-more-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#ffffff">
-            <path d="M8 5v14l11-7z" />
-          </svg>
-        </span>
-        Learn More
-      </button>
-    </div>
-  </div> -->
-
-  <div class="hero__bottom">
-  <button class="hero__cta-button">Start your journey!</button>
+<div class="hero__bottom">
+  <button class="hero__cta-button">  {{ isSmallScreen ? 'Start' : 'Start your journey!' }}</button>
 
   <picture>
-    <source media="(max-width: 480px)" srcset="assets/images/hero/mobileHero2.png" />
-    <source media="(max-width: 1050px)" srcset="assets/images/hero/tabletHero.png" />
+    <source media="(max-width: 480px)" srcset="assets/images/hero/mobileHero3.png" />
+    <source media="(max-width: 1050px)" srcset="assets/images/hero/tabletHero2.png" />
     <img
-      src="assets/images/hero/laptopHero.png"
+      src="assets/images/hero/laptopHero2.png"
       alt="Team celebrating success"
       class="hero__image"
     />
@@ -45,12 +25,8 @@
 
   <div class="hero__overlay">
     <button class="hero__learn-more">
-      <span class="hero__learn-more-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#ffffff">
-          <path d="M8 5v14l11-7z" />
-        </svg>
-      </span>
-      Learn More
+      <img src="assets/images/hero/play.png" class="hero__learn-more-icon"/>
+      {{ isMdScreen ? 'Learn' : 'Learn More' }}
     </button>
   </div>
 </div>

@@ -2,11 +2,9 @@
 
 .navbar {
   @include flex(space-between, center);
-  padding: 1rem 2rem;
-  // background-color: $black-color;
+  padding: 2.4rem;
   border-bottom: 1px solid #313131;
-  //  background: #000002;
-  //   background: linear-gradient(90deg, rgba(0, 0, 2, 1) 0%, rgba(8, 23, 41, 1) 50%, rgba(0, 0, 2, 1) 100%);
+
   &__logo {
     @include flex(center);
 
@@ -27,8 +25,13 @@
     &-icon {
       height: 0.3rem;
       width: 100%;
-      background-color: white;
       border-radius: 0.3rem;
+    }
+
+    img {
+      width: 2.4rem;
+      height: 2.4em;
+      object-fit: contain;
     }
   }
 
@@ -45,13 +48,13 @@
   }
 
   &__link {
-    color: white;
+    color: $white-color;
     text-decoration: none;
     font-size: 1.6rem;
     transition: color 0.2s ease;
 
     &:hover {
-      color: #e83251;
+      color: $pink-color;
     }
   }
 
@@ -68,7 +71,7 @@
 
     &__toggle {
       display: flex;
-      z-index: 2;
+      z-index: 4;
     }
 
     &__links {
@@ -82,7 +85,7 @@
       align-items: center;
       justify-content: center;
       transform: translateX(-100%);
-      z-index: 1;
+      z-index: 3;
 
       &--active {
         transform: translateX(0);
@@ -95,8 +98,7 @@
 
     &__action {
       position: absolute;
-      top: 1rem;
-      right: 4rem;
+      right: 7rem;
     }
   }
 }

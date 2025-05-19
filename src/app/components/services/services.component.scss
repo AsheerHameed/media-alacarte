@@ -1,8 +1,32 @@
 @use 'main' as *;
 
+$card-border-radius: 2.4rem;
+$card-gradient: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+
+.services__banner {
+  width: 100%;
+  overflow: hidden;
+
+  &-image {
+    width: 120%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    left: -30px;
+
+    @include respond(tablet) {
+      height: auto;
+    }
+
+    @include respond(mobile) {
+      height: auto;
+    }
+  }
+}
+
 .services {
-  //   display: flex;
-  //   align-items: center;
   @include flex(flex-start, center);
   flex-direction: column;
   color: $white-color;
@@ -10,204 +34,93 @@
   &__top {
     @include flex(flex-start, center);
     flex-direction: column;
-    flex-direction: column;
     margin-bottom: 3rem;
 
-    img {
+    .services__icon {
       width: 7.4rem;
       height: 7.4rem;
       margin-bottom: 1rem;
     }
 
-    h2 {
-      font-size: 3.2rem;
-      font-weight: 600;
+    .services__title {
+      @include text-style(3.2rem, 600, center, $white-color);
     }
   }
 
   &__cards {
     @include flex(center, center);
-    gap: 2rem;
+    width: 100%;
+    gap: 2.4rem;
     flex-wrap: wrap;
+  }
 
-    .card {
-      position: relative;
-      width: 300px;
-      height: 440px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 1.5rem;
-      overflow: hidden;
-      @include flex(flex-start, flex-end);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-      cursor: pointer;
-        @include respond(tablet){
-        width: 280px;
-        height: 320px;
-      }
-      @include respond(mobile){
-        width: 200px;
-        height: 220px;
-      }
-      &:hover {
-        transform: translateY(-8px);
-        box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-      }
+  &__card {
+    position: relative;
+    width: 32rem;
+    height: 48rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: $card-border-radius;
+    overflow: hidden;
+    @include flex(flex-start, flex-end);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.4);
+    cursor: pointer;
 
-      .card-content {
-        // background: rgba(0, 0, 0, 0.65);
-        color: $white-color;
-        padding: 1.2rem;
-        width: 100%;
-        border-bottom-left-radius: 1.5rem;
-        border-bottom-right-radius: 1.5rem;
-        display: flex;
-        align-items: center;
-        // box-shadow: inset 0 -70px 80px -30px rgba(0, 0, 0, 1);
-        background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+    @include respond(tablet) {
+      width: 28rem;
+      height: 32rem;
+    }
 
-        h3 {
-          font-size: 1.8rem;
-          font-weight: 500;
-          margin: 0 0 0.5rem;
-        }
+    &:hover {
+      transform: translateY(-0.8rem);
+      box-shadow: 0 0.5rem 1.5rem rgba(232, 50, 81, 0.3),
+      0 1rem 3rem rgba(232, 50, 81, 0.25),
+      0 2rem 4rem rgba(232, 50, 81, 0.15),
+      0 0 2rem rgba(232, 50, 81, 0.4);
+    }
 
-        p {
-          font-size: 1.2rem;
-          margin: 0 0 1rem;
-          font-weight: 300;
-          color: #dbdbdb;
-        }
+    &__content {
+      color: $white-color;
+      padding: 1.2rem;
+      width: 100%;
+      border-bottom-left-radius: $card-border-radius;
+      border-bottom-right-radius: $card-border-radius;
+      @include flex(space-between, center);
+      background: $card-gradient;
 
-        .cta-button {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          border-radius: 50%;
-          background: radial-gradient(circle, #ED4350 0%, #E62C5E 50%, #E0276B 100%);
-          color: $white-color;
-          text-decoration: none;
-          font-size: 1rem;
-
-          &-icon {
-            width: 20px;
-            height: 20px;
-          }
-        }
+      &--left {
+        flex: 1;
       }
 
-      .card-tag {
-        position: absolute;
-        bottom: 1rem;
-        left: 1rem;
-        background: $pink-color;
-        padding: 0.4rem 1rem;
-        border-radius: 2rem;
-        font-size: 0.85rem;
-        font-weight: 500;
-        color: $white-color;
+      &--right {
+        @include flex(center, center);
       }
     }
 
+    &__heading {
+      @include text-style(1.8rem, 500, left, $white-color);
+      margin: 0 0 0.5rem;
+    }
 
+    &__description {
+      @include text-style(1.2rem, 400, left, $gray-color);
+      margin: 0 0 1rem;
+    }
+
+    &__button {
+      @include flex(center, center);
+      width: 3.6rem;
+      height: 3.6rem;
+      border-radius: 50%;
+      background: $primary-gradient;
+      color: $white-color;
+      text-decoration: none;
+
+      &-icon {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
   }
 }
-
-// @use 'main' as *;
-
-// .services {
-//   @include flex(flex-start, center);
-//   flex-direction: column;
-//   color: $white-color;
-
-//   &__top {
-//     @include flex(flex-start, center);
-//     flex-direction: column;
-//     margin-bottom: 3rem;
-
-//     img {
-//       width: 48px;
-//       height: 48px;
-//       margin-bottom: 1rem;
-//     }
-
-//     h2 {
-//       font-size: 2rem;
-//       font-weight: 600;
-//     }
-//   }
-
-//   &__cards {
-//     @include flex(center, center);
-//     gap: 1rem;
-
-//     .card {
-//       height: 400px;
-//       overflow: hidden;
-//       border-radius: 1.5rem;
-//       position: relative;
-//       cursor: pointer;
-//       transition: width 0.4s ease;
-//       background: #d8d8d8;
-//       flex-shrink: 0;
-
-//       img {
-//         width: 100%;
-//         height: 100%;
-//         object-fit: cover;
-//         border-radius: 1.5rem;
-//       }
-
-//       .card-overlay {
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         height: 100%;
-//         width: 100%;
-//         border-radius: 1.5rem;
-//         background: rgba(87, 87, 87, 0.103);
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: space-between;
-//         padding: 1rem;
-//       }
-
-//       .card-tag {
-//         align-self: flex-end;
-//         margin-top: auto;
-//         background: $pink-color;
-//         color: $white-color;
-//         padding: 0.4rem 1rem;
-//         border-radius: 2rem;
-//         font-size: 0.85rem;
-//         font-weight: 500;
-//       }
-
-//       .card-content {
-//         h3 {
-//           font-size: 1.25rem;
-//           font-weight: 600;
-//           margin-bottom: 0.5rem;
-//         }
-
-//         p {
-//           font-size: 0.9rem;
-//           margin-bottom: 1rem;
-//         }
-
-//         .cta-button {
-//           display: inline-block;
-//           padding: 0.5rem 0.75rem;
-//           border-radius: 999px;
-//           background-color: $pink-color;
-//           color: $white-color;
-//           font-weight: 600;
-//           font-size: 1rem;
-//         }
-//       }
-//     }
-//   }
-// }

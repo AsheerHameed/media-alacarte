@@ -6,30 +6,29 @@
         </a>
       </div>
       
-      <div class="navbar__toggle" (click)="toggleMenu()">
-        <span class="navbar__toggle-icon"></span>
-        <span class="navbar__toggle-icon"></span>
-        <span class="navbar__toggle-icon"></span>
+     <div class="navbar__toggle" (click)="toggleMenu()">
+        <img *ngIf="!isMenuOpen" src="assets/images/humburger.png" alt="Menu" class="navbar__toggle-icon" />
+        <img *ngIf="isMenuOpen" src="assets/images/close.png" alt="Close" class="navbar__toggle-icon" />
       </div>
       
       <ul class="navbar__links" [class.navbar__links--active]="isMenuOpen">
         <li class="navbar__item">
-          <a href="#" class="navbar__link">The Platform</a>
+          <a href="https://mediaalacarte.net/the-platform.html" class="navbar__link">The Platform</a>
         </li>
         <li class="navbar__item">
-          <a href="#" class="navbar__link">Features</a>
+          <a href="https://mediaalacarte.net/features.html" class="navbar__link">Features</a>
         </li>
         <li class="navbar__item">
-          <a href="#" class="navbar__link">Benefits</a>
+          <a href="https://mediaalacarte.net/benefits.html" class="navbar__link">Benefits</a>
         </li>
         <li class="navbar__item">
-          <a href="#" class="navbar__link">Request a Demo</a>
+          <a href="https://mediaalacarte.net/request-demo.html" class="navbar__link">Request a Demo</a>
         </li>
         <li class="navbar__item">
-          <a href="#" class="navbar__link">Contact Us</a>
+          <a href="https://mediaalacarte.net/contact-us.html" class="navbar__link">Contact Us</a>
         </li>
         <li class="navbar__item">
-          <a href="#" class="navbar__link">About Us</a>
+          <a href="https://mediaalacarte.net/about-us.html" class="navbar__link">About Us</a>
         </li>
       </ul>
       

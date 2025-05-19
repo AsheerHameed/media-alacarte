@@ -1,20 +1,33 @@
-@forward './abstracts/variables';
-@forward './abstracts/mixins';
-@forward './base/typography';
-@forward './base/buttons';
+  @forward './abstracts/variables';
+  @forward './abstracts/mixins';
+  @forward './base/typography';
+  @forward './base/buttons';
 
-html{
+  html {
     font-size: 62.5%;
-}
-body{
+  }
+
+  body {
     margin: 0;
     background: #000002;
     background: linear-gradient(90deg, rgba(0, 0, 2, 1) 0%, rgba(8, 23, 41, 1) 50%, rgba(0, 0, 2, 1) 100%);
-}
-p,h1,h2,h3,h4,h5,h6 {
-  margin: 0;
-}
+  }
 
-.section__padding{
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+
+  .section__padding {
     padding: 4rem 6rem;
-}
+  }
+
+  .no-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }

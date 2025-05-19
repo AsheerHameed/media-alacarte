@@ -4,15 +4,78 @@
 .container {
   @include flex;
   flex-direction: column;
-  background-color: #000;
-  
+  background-color: $black-color;
+  position: relative;
+  overflow: hidden;
+
+  .svg-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include respond(tablet) {
+
+      image[id^="g"],
+      image[id^="j"],
+      image[id^="d"],
+      image[id^="e"],
+      image[id^="f"],
+      image[id^="i"],
+      mage[id^="h"] {
+        width: 45px !important;
+        height: 45px !important;
+      }
+
+      clipPath#a circle {
+        cx: 22.5 !important;
+        cy: 22.5 !important;
+        r: 22.5 !important;
+      }
+    }
+
+    @include respond(mobile) {
+
+      image[id^="g"],
+      image[id^="j"],
+      image[id^="d"],
+      image[id^="e"],
+      image[id^="f"],
+      image[id^="i"],
+      image[id^="h"] {
+        width: 30px !important;
+        height: 30px !important;
+      }
+
+      clipPath#a circle {
+        cx: 15 !important;
+        cy: 15 !important;
+        r: 15 !important;
+      }
+
+      #c {
+        r: 200 !important;
+      }
+    }
+  }
+
   &__top {
     @include flex;
     flex-direction: column;
     width: 100%;
     margin-bottom: 5rem;
+    position: relative;
+    z-index: 2;
   }
-  
+
   &__tag {
     @include flex;
     background: rgba(255, 255, 255, 0.15);
@@ -23,53 +86,55 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }
-  
+
   &__title {
     @include text-style(4.8rem, 600, center, $white-color, 1.2);
     margin-bottom: 1rem;
-    
+
     @include respond(tablet) {
       @include text-style(3.6rem, 600, center, $white-color, 1.2);
     }
-    
+
     @include respond(mobile) {
       @include text-style(2.8remm, 600, center, $white-color, 1.2);
     }
   }
-  
+
   &__description {
     @include text-style(1.6rem, 500, center, $gray-color);
     margin-bottom: 2.5rem;
-    
+
     @include respond(mobile) {
       @include text-style(1.4rem, 500, center, $gray-color);
     }
   }
-  
+
   &__button {
     @include secondary-button(18rem, 5rem);
     border: 1px solid $white-color;
     border-radius: 16px;
     margin-bottom: 4rem;
   }
-  
+
   &__stats {
     width: 100%;
-    background: radial-gradient(circle, #ED4350 0%, #E62C5E 50%, #E0276B 100%);
+    background: $primary-gradient;
     border-radius: 1.5rem;
     padding: 4rem 2rem;
     @include flex(space-around, center);
-    
+
     @include respond(tablet) {
       flex-direction: column;
       gap: 3rem;
     }
   }
-  
+
   &__bottom {
+    position: relative;
+    z-index: 2;
     width: 100%;
-    background: #161617;
-    background: radial-gradient(circle, rgba(22, 22, 23, 1) 0%, rgba(43, 43, 43, 1) 33%, rgba(22, 24, 27, 1) 69%, rgba(22, 22, 22, 1) 100%);
+    background: #171617;
+    background: linear-gradient(90deg, rgba(23, 22, 23, 1) 0%, rgba(22, 27, 26, 1) 50%, rgba(22, 25, 27, 1) 100%);
     border-radius: 1.5rem;
     padding: 7.4rem 2rem;
     @include flex;
@@ -83,25 +148,25 @@
     @include flex;
     flex-direction: column;
     width: 33%;
-    
+
     @include respond(tablet) {
       width: 100%;
     }
   }
-  
+
   &__number {
     @include text-style(4rem, 600, center, $white-color, 1);
     margin-bottom: 1rem;
-    
+
     @include respond(mobile) {
       @include text-style(3rem, 600, center, $white-color, 1);
     }
   }
-  
+
   &__text {
     @include text-style(1.4rem, 400, center, $white-color);
     max-width: 20rem;
-    
+
     @include respond(mobile) {
       @include text-style(1.2rem, 400, center, $white-color);
     }
@@ -112,32 +177,35 @@
   &__title {
     @include text-style(3rem, 500, center, $white-color, 1.5);
     margin-bottom: 3rem;
-    
+
     @include respond(tablet) {
       @include text-style(2.4rem, 600, center, $white-color, 1.2);
-        margin-bottom: 2rem;
+      margin-bottom: 2rem;
     }
-    
+
     @include respond(mobile) {
       @include text-style(2rem, 600, center, $white-color, 1.2);
       margin-bottom: 1rem;
     }
   }
-  
+
   &__features {
     @include flex;
-     @include respond(mobile){
-        flex-direction: column;
+
+    @include respond(mobile) {
+      flex-direction: column;
     }
+
     margin-bottom: 3rem;
   }
-  
+
   &__button {
     @include primary-button(auto, 5rem, $black-color);
     font-size: 1.6rem;
     border-radius: 1rem;
     padding: 1.2rem 2.8rem;
     @include flex;
+
     .button__arrow {
       height: 1.8rem;
       width: 20px;
@@ -151,15 +219,16 @@
     gap: 1.5rem;
     width: 100%;
 
-    @include respond(mobile){
-        margin-top: 2rem;;
+    @include respond(mobile) {
+      margin-top: 2rem;
+      ;
     }
   }
-  
+
   &__icon {
     width: 2.4rem;
     height: 2.4rem;
-    background-color: #ED4350;
+    background-color: $pink-color;
     border-radius: 50%;
     @include flex;
     color: $black-color;
@@ -167,10 +236,10 @@
     font-size: 1.4rem;
     flex-shrink: 0;
   }
-  
+
   &__text {
     @include text-style(1.6rem, 400, left, $white-color);
-    
+
     @include respond(mobile) {
       @include text-style(1.4rem, 400, left, $white-color);
     }

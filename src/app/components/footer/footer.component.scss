@@ -1,0 +1,168 @@
+@use 'main' as *;
+
+.footer {
+    background-color: $card-bg-color;
+    color: $white-color;
+
+    .container {
+        @include flex(space-between, flex-start);
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @include respond(tablet) {
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        @include respond(mobile) {
+            padding-bottom: 0;
+        }
+
+        &__left {
+            @include flex(flex-start, flex-start);
+            flex-direction: column;
+            gap: 2rem;
+
+            .logo {
+                img {
+                    max-width: 160px;
+                    margin-bottom: 1rem;
+                    filter: brightness(0) invert(1);
+                }
+
+                .tagline {
+                    @include text-style(1.4rem, 300, left, $gray-color);
+                    margin-top: 0.5rem;
+                }
+            }
+
+            .social-icons {
+                @include flex(flex-start, center);
+                gap: 1.5rem;
+                margin-top: 1rem;
+
+                a {
+                    @include flex;
+                    width: 36px;
+                    height: 36px;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    border-radius: 50%;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.2);
+                    }
+
+                    img {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+        }
+
+        &__right {
+            @include flex(space-between, flex-start);
+            flex-wrap: wrap;
+            gap: 4rem;
+
+            @include respond(mobile) {
+                flex-direction: column;
+                gap: 3rem;
+            }
+
+            .links-wrapper {
+                h4 {
+                    @include text-style(1.6rem, 500, left, $white-color, 1.2);
+                    margin-bottom: 2rem;
+                }
+
+                .links-columns {
+                    @include flex(flex-start, flex-start);
+                    gap: 4rem;
+                    flex-wrap: wrap;
+
+                    @include respond(mobile) {
+                        flex-direction: column;
+                        gap: 0;
+                    }
+
+                    .useful-links,
+                    .contact-us {
+                        ul {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+
+                            li {
+                                margin-bottom: 1rem;
+
+                                a {
+                                    @include text-style(1.4rem, 300, left, $gray-color);
+                                    text-decoration: none;
+                                    transition: color 0.3s ease;
+
+                                    &:hover {
+                                        color: $white-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .address {
+                h4 {
+                    @include text-style(1.6rem, 500, left, $white-color, 1.2);
+                    margin-bottom: 2rem;
+                }
+
+                .address-item {
+                    @include flex(flex-start, flex-start);
+                    gap: 1rem;
+                    margin-bottom: 1.5rem;
+
+                    img {
+                        width: 18px;
+                        height: 18px;
+                        margin-top: 0.3rem;
+                    }
+
+                    p {
+                        @include text-style(1.4rem, 300, left, $gray-color);
+                        line-height: 1.6;
+                    }
+
+                    a {
+                        @include flex;
+                        gap: 1rem;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .divider {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 2rem 0;
+        margin-top: 4rem;
+
+        .container {
+            @include flex(center, center);
+
+            .copyright {
+                @include text-style(1.4rem, 300, center, $gray-color);
+            }
+        }
+    }
+}
+
+.section_padding {
+    padding: 5rem 2rem;
+
+    @include respond(mobile) {
+        padding: 3rem 1.5rem;
+    }
+}

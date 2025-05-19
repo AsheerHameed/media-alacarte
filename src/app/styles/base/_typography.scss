@@ -2,13 +2,31 @@
 @use '../abstracts/mixins' as *;
 
 body {
-    font-family: $font-primary;
-    font-size: 1.6rem;
-    line-height: 1.6;
-    color: $primary-color;
-    
-    @include respond(tablet) {
-      font-size: 1.4rem;
-    }    
+  font-family: $font-primary;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: $primary-color;
 
+  @include respond(tablet) {
+    font-size: 1.4rem;
   }
+
+}
+
+//mixin for text styles
+@mixin text-style($font-size: 1.6rem,
+  $font-weight: 400,
+  $text-align: left,
+  $color: $white-color,
+  $line-height: 1.5,
+  $letter-spacing: normal,
+  $text-transform: none) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  text-align: $text-align;
+  color: $color;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  text-transform: $text-transform;
+  font-family: $font-primary;
+}
