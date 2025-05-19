@@ -1,103 +1,102 @@
 @use 'main' as *;
 
 .navbar {
-    @include flex(space-between,center);
-    padding: 1rem 2rem;
-    // width: 100%;
-    background-color: $black-color;
-    &__logo {
-      @include flex(center);
+  @include flex(space-between, center);
+  padding: 1rem 2rem;
+  // background-color: $black-color;
+  border-bottom: 1px solid #313131;
+  //  background: #000002;
+  //   background: linear-gradient(90deg, rgba(0, 0, 2, 1) 0%, rgba(8, 23, 41, 1) 50%, rgba(0, 0, 2, 1) 100%);
+  &__logo {
+    @include flex(center);
 
-      img {
-        height: 40px;
-        width: auto;
-      }
+    img {
+      height: 4rem;
+      width: auto;
     }
-    
+  }
+
+  &__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 3rem;
+    height: 2rem;
+    cursor: pointer;
+
+    &-icon {
+      height: 0.3rem;
+      width: 100%;
+      background-color: white;
+      border-radius: 0.3rem;
+    }
+  }
+
+  &__links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+
+  &__item {
+    margin: 0 1rem;
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #e83251;
+    }
+  }
+
+  &__action {
+    margin-left: 1rem;
+  }
+
+  &__button {
+    @include primary-button(8rem, 4rem);
+  }
+
+  @include respond(tablet) {
+    position: relative;
+
     &__toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-
-      width: 30px;
-      height: 21px;
-      cursor: pointer;
-      
-      &-icon {
-        height: 3px;
-        width: 100%;
-        background-color: white;
-        border-radius: 3px;
-      }
-    }
-    
-    &__links {
       display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      transition: all 0.3s ease;
+      z-index: 2;
     }
-    
-    &__item {
-      margin: 0 1rem;
-    }
-    
-    &__link {
-      color: white;
-      text-decoration: none;
-      font-size: 1.6rem;
-      transition: color 0.2s ease;
-      
-      &:hover {
-        color: #e83251;
-      }
-    }
-    
-    &__action {
-      margin-left: 1rem;
-    }
-    
-    &__button {
-      // Button styling will use mixin: @include primary-button($color, $bg);
-    }
-  }
 
-  @media (max-width: 768px) {
-    .navbar {
-      position: relative;
-      
-      &__toggle {
-        display: flex;
-        z-index: 2;
-      }
-      
-      &__links {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100%;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.95);
-        align-items: center;
-        justify-content: center;
-        transform: translateX(-100%);
-        z-index: 1;
-        
-        &--active {
-          transform: translateX(0);
-        }
-      }
-      
-      &__item {
-        margin: 1rem 0;
-      }
-      
-      &__action {
-        position: absolute;
-        top: 1rem;
-        right: 4rem;
+    &__links {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.95);
+      align-items: center;
+      justify-content: center;
+      transform: translateX(-100%);
+      z-index: 1;
+
+      &--active {
+        transform: translateX(0);
       }
     }
+
+    &__item {
+      margin: 1rem 0;
+    }
+
+    &__action {
+      position: absolute;
+      top: 1rem;
+      right: 4rem;
+    }
   }
+}

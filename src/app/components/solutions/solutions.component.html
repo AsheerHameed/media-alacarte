@@ -1,1 +1,73 @@
-<p>solutions works!</p>
+<section class="container section__padding">
+  <div class="container__top">
+    <p class="container__subtitle">WHY MEDIA ALA CARTE?</p>
+    <h2 class="container__title">Our All <span class="highlight">Solution</span> for <br> Smarter Media Buying</h2>
+  </div>
+
+  <!-- <div class="container__bottom">
+    <div class="main-card">
+      <div class="main-card__content">
+        <h3 class="main-card__heading">We simplify media buying with data, automation, and collaboration to maximize ROI</h3>
+        <button class="main-card__button">Get Started</button>
+      </div>
+      <div class="main-card__image">
+      </div>
+    </div>
+    
+    <div class="cards-grid">
+      <div class="card" *ngFor="let card of cardItems">
+        <div class="card__icon">
+          <span class="icon-{{card.icon}}"></span>
+        </div>
+        <h4 class="card__heading">{{card.heading}}</h4>
+        <p class="card__description">{{card.description}}</p>
+        <div class="card__cta">
+          <button class="card__button">
+            <img src="assets/images/hero/north-east.png" class="card__button-icon"/>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="container__bottom">
+    <div class="top-row">
+      <div class="main-card">
+        <div class="main-card__content">
+          <h3 class="main-card__heading">We simplify media buying with data, automation, and collaboration to maximize
+            ROI</h3>
+          <button class="main-card__button">Get Started</button>
+        </div>
+        <div class="main-card__image">
+        </div>
+      </div>
+
+      <div class="card" *ngIf="cardItems.length > 0">
+        <div class="card__icon">
+          <img src="{{cardItems[0].icon}}" />
+        </div>
+        <h4 class="card__heading">{{cardItems[0].heading}}</h4>
+        <p class="card__description">{{cardItems[0].description}}</p>
+        <div class="card__cta">
+          <button class="card__button">
+            <img src="assets/images/hero/north-east.png" class="card__button-icon" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="cards-grid">
+      <div class="card" *ngFor="let card of cardItems.slice(1)">
+        <div class="card__icon">
+          <img src="{{card.icon}}" />
+        </div>
+        <h4 class="card__heading">{{card.heading}}</h4>
+        <p class="card__description">{{card.description}}</p>
+        <div class="card__cta">
+          <button class="card__button">
+            <img src="assets/images/hero/north-east.png" class="card__button-icon" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

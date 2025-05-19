@@ -22,7 +22,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ServicesComponent,
     SolutionsComponent,
     StatsComponent,
-    FooterComponent
+    FooterComponent,
+    ServicesCardComponent
   ],
   imports: [
     BrowserModule,

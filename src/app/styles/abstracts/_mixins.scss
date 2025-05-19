@@ -1,3 +1,4 @@
+@use '../abstracts/variables' as *;
 @mixin flex($justifyContent: center, $alignItems: center) {
     display: flex;
     justify-content: $justifyContent;
@@ -5,6 +6,11 @@
 }
 
 @mixin respond($breakpoint) {
+    @if $breakpoint == laptop {
+      @media (max-width: 1050px) {
+        @content;
+      }
+    }
     @if $breakpoint == tablet {
       @media (max-width: 768px) {
         @content;
@@ -15,5 +21,29 @@
         @content;
       }
     }
+}  
+
+@mixin respond-between($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
   }
-  
+}
+
+@mixin text-style(
+  $font-size: 1.6rem,
+  $font-weight: 400,
+  $text-align:left,
+  $color: $white-color,
+  $line-height: 1.5,
+  $letter-spacing: normal,
+  $text-transform: none
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  text-align: $text-align;
+  color: $color;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  text-transform: $text-transform;
+  font-family: $font-primary;
+}

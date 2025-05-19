@@ -1,1 +1,55 @@
-<p>services works!</p>
+<section class="services section__padding">
+  <div class="services__top">
+    <img src="assets/images/services/setting.png" alt="icon" />
+    <h2>Our Services</h2>
+  </div>
+  
+  <div class="services__cards">
+    <div class="card" *ngFor="let card of services" [ngStyle]="{ 'background-image': 'url(' + card.image + ')' }">
+        <div class="card-content">
+          <div class="card-content-left">
+            <h3>{{ card.title }}</h3>
+            <p>{{ card.subtitle }}</p>
+          </div>
+          <div class="card-content-right">
+            <a *ngIf="card.cta" [href]="card.cta" class="cta-button">
+              <img src="assets/images/hero/north-east.png" class="cta-button-icon"/>
+            </a>
+          </div> 
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="services section__padding">
+  <div class="services__top">
+    <img src="assets/icons/our-services-icon.svg" alt="icon" />
+    <h2>Our Services</h2>
+  </div>
+
+  <div class="services__cards">
+    <div
+      class="card"
+      *ngFor="let card of services; let i = index"
+      #cardRef
+      (mouseenter)="onCardHover(i)"
+    >
+      <div class="card-overlay">
+        <div class="card-tag" *ngIf="!isActive(i)">
+          {{ card.tag }}
+        </div>
+
+        <div class="card-content" *ngIf="isActive(i)">
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.subtitle }}</p>
+          <a *ngIf="card.cta" [href]="card.cta" class="cta-button">
+            ➜
+          </a>
+        </div>
+      </div>
+      <img [src]="card.image" alt="{{ card.title }}" />
+    </div>
+  </div>
+</section> -->
+
+

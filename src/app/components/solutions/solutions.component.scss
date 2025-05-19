@@ -1,0 +1,248 @@
+@use 'main' as *;
+
+$card-bg-color: #181818;
+$card-border-radius: 1.2rem;
+$card-padding: 2.4rem;
+$card-gap: 1.6rem;
+$primary-gradient: radial-gradient(circle, #ED4350 0%, #E62C5E 50%, #E0276B 100%);
+
+.container {
+  @include flex(center, flex-start);
+  flex-direction: column;
+  // background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 10, 30, 0.95));
+  background: #0C1F26;
+background: linear-gradient(80deg, rgba(12, 31, 38, 1) 0%, rgba(13, 20, 27, 1) 18%, rgba(0, 0, 2, 1) 100%);
+  &__top {
+    width: 100%;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  &__subtitle {
+    @include text-style(1.6rem, 500, center, $gray-color);
+    margin-bottom: 1.6rem;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include text-style(4.8rem, 600, center, $white-color, 1.2);
+    margin-bottom: 3.2rem;
+
+    .highlight {
+      color: $black-color;
+      background: radial-gradient(circle, #ED4350 0%, #E62C5E 50%, #E0276B 100%);
+      padding: 0.2rem 1rem;
+      border-radius: 0.4rem;
+    }
+
+    @include respond(tablet) {
+      font-size: 3.6rem;
+    }
+
+    @include respond(mobile) {
+      font-size: 2.8rem;
+    }
+  }
+
+  // Bottom section with cards
+  &__bottom {
+    width: 100%;
+    @include flex(space-between, stretch);
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+}
+
+// Main featured card
+.main-card {
+  width: 100%;
+  height: 28rem;
+  display: flex;
+  background-color: $card-bg-color;
+  border-radius: $card-border-radius;
+  overflow: hidden;
+  margin-bottom: 2.4rem;
+  position: relative;
+  cursor: pointer;
+
+  &__content {
+    flex: 1;
+    padding: $card-padding;
+    @include flex(space-between, flex-end);
+    position: relative;
+    z-index: 2;
+    
+    @include respond(tablet){
+    flex-direction: column
+    }
+  }
+
+  &__heading {
+    @include text-style(2.4rem, 500, left, $white-color, 1.4);
+    // margin-bottom: 2.4rem;
+    @include respond(mobile){
+    font-size: 2rem;
+    }
+    max-width: 480px;
+  }
+
+  &__button {
+    @include primary-button();
+      width: 28rem;
+      height: 8rem;
+    @include respond(mobile){
+      width: 14rem;
+      height: 4rem;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/images/solutions/solution-1.webp');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+
+    @include respond(mobile){
+      background-position: right;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+    }
+
+    @include respond(mobile) {
+      opacity: 0.7;
+    }
+  }
+
+  @include respond(tablet) {
+    height: auto;
+    min-height: 32rem;
+  }
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $card-gap;
+  width: 100%;
+
+  @include respond(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background-color: $card-bg-color;
+  border-radius: $card-border-radius;
+  padding: $card-padding;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+    background: $primary-gradient;
+    .card__description {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  &__icon {
+    // font-size: 2.4rem;
+    margin-bottom: 1.6rem;
+    width: 4.8rem;
+    height: 4.8rem;
+    background-color: $black-color;
+    border-radius: 50%;
+    @include flex();
+
+    img{
+      width: 32px;
+      width: 32px;
+    }
+  }
+
+  &__heading {
+    @include text-style(2rem, 600, left, $white-color, 1.2);
+    margin-bottom: 1.2rem;
+  }
+
+  &__description {
+    @include text-style(1.4rem, 400, left, $gray-color, 1.6);
+    flex-grow: 1;
+    margin-bottom: 2.4rem;
+    transition: color 0.3s ease;
+  }
+
+  &__cta {
+    align-self: flex-end;
+  }
+
+  &__button {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: $white-color;
+    background-color: transparent;
+    border: 1px solid $white-color;
+    @include flex();
+
+    &:hover {
+      background-color: radial-gradient(circle,#ED4350 0%,#E62C5E 50%,#E0276B 100%)
+    }
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.top-row {
+  display: flex;
+  gap: $card-gap;
+  width: 100%;
+  margin-bottom: $card-gap;
+  
+  .main-card {
+    flex: 2;
+    margin-bottom: 0;
+  }
+  
+  .card {
+    flex: 1;
+  }
+  
+  @include respond(tablet) {
+    flex-direction: column;
+    
+    .main-card, .card {
+      // width: 100%;
+    }
+    
+    .main-card {
+      margin-bottom: $card-gap;
+    }
+  }
+}

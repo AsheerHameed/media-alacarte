@@ -1,0 +1,197 @@
+@use 'main' as *;
+
+.hero {
+  @include flex;
+  flex-direction: column;
+
+  &__top {}
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .hero__subtitle {
+      @include text-style(1.6rem, 500, center, $gray-color);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero__title {
+      @include flex;
+      flex-direction: column;
+
+      &--primary {
+        @include text-style(4.8rem, 600,center,$white-color,1.2);
+        margin-bottom: 1rem;
+      }
+
+      &--secondary {
+        @include text-style(2.3rem, 400, center, $pink-color);
+      }
+    }
+
+    .hero__description {
+      @include text-style(2.4rem, 500, center, $gray-color);
+    }
+
+    .hero__cta-button {
+      @include primary-button;
+    }
+  }
+
+  .hero__bottom {
+    position: relative;
+    width: 100%;
+    max-width: 100rem;
+    margin-top: 4rem;
+
+    .hero__image {
+      width: 100%;
+      height: auto;
+      border-radius: 2.4rem;
+      object-fit: cover;
+      display: block;
+    }
+
+    // .hero__cta-button {
+    //   position: absolute; 
+    //   top: 2.5rem;
+    //   left: 5rem;
+    //   z-index: 2;
+    //   padding: 1rem 2.4rem;
+
+    //   @include primary-button;
+    //   width: 28rem;
+    //   height: 9rem;
+
+    //   @include respond(laptop) {
+    //     top: 1.5rem;
+    //     left: 4rem;
+    //     width: 26rem;
+    //     height: 8.5rem; 
+    // }
+    // //   @include respond(tablet) {
+    // //        top: 0.4rem;
+    // //       left: 2rem;
+    // //       width: 18rem;
+    // //       height: 6rem;
+    // // }
+    //  @include respond-between(850px, 950px) {
+    //   // font-size: 2.4rem;
+    //       top: 0.5rem;
+    //       left: 2rem;
+    //       width: 24rem;
+    //       height: 7.5rem;
+    // }
+    //  @include respond-between(800px, 840px) {
+    //   // font-size: 2.4rem;
+    //       top: 0.5rem;
+    //       left: 2rem;
+    //       width: 22rem;
+    //       height: 7.5rem;
+    // }
+    //  @include respond-between(750, 799px) {
+    //   // font-size: 2.4rem;
+    //       top: 0.5rem;
+    //       left: 1.5rem;
+    //       width: 21rem;
+    //       height: 7.5rem;
+    // }
+    // @include respond(tablet){
+    //       top: 1rem;
+    //       left: 1.5rem;
+    //       width: 19rem;
+    //       height: 5.5rem;
+    // }
+
+    // @include respond(mobile) {
+    //   position: static;
+    //   margin-bottom: 2rem;
+    //   width: 20rem;
+    //   height: 4rem;
+    // }
+    // }
+
+    .hero__cta-button {
+      position: absolute;
+      z-index: 2;
+      padding: 1rem 2.4rem;
+      @include primary-button;
+
+      // Default (1440px and above — laptopHero.jpg)
+      top: 2.5rem;
+      left: 5rem;
+      width: 28rem;
+      height: 9rem;
+
+      @include respond(laptop) {
+        // max-width: 1050px — triggers tabletHero
+        top: 1.5rem;
+        left: 4rem;
+        width: 26rem;
+        height: 8rem;
+      }
+
+      @include respond(tablet) {
+        // max-width: 768px
+        top: 1rem;
+        left: 1.5rem;
+        width: 19rem;
+        height: 5.5rem;
+      }
+
+      @include respond(mobile) {
+        // max-width: 480px — triggers mobileHero
+        top: 0;
+        left: 1.5rem;
+        width: 18rem;
+        height: 5rem;
+      }
+    }
+  .hero__overlay {
+      position: absolute;
+      bottom: 0;
+      right: 7rem;
+      z-index: 2;
+       @include respond(mobile){
+        right:1rem;
+       }
+
+      .hero__learn-more {
+        @include secondary-button;
+        width: 22rem;
+        height: 7rem;
+        align-items: center;
+        @include respond(laptop) {
+          bottom: 0;
+          right: 6rem;
+          width: 21rem;
+          height: 6rem;
+
+        }
+
+        @include respond(tablet) {
+          bottom: 1rem;
+          right: 4.5rem;
+          width: 15rem;
+          height: 4rem;
+
+        }
+
+        @include respond(mobile) {
+          font-size: 1rem;
+          width: 13rem;
+          height: 3.5rem;
+          color: #000;
+        }
+
+      
+        
+
+      }
+
+
+
+    }
+  }
+}
