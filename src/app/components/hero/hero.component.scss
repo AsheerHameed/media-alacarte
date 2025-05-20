@@ -107,11 +107,19 @@
         padding: 0.5rem 1rem;
       }
 
-      @include respond-between(360px, 419px) {
+      @include respond-between(380px, 419px) {
         left: 1rem;
-        width: 7rem;
+        width: 8rem;
         height: 2.5rem;
         padding: 0.5rem 1rem;
+      }
+
+      @include respond-between(290px, 379px) {
+        left: 0;
+        width: 6.5rem;
+        height: 2rem;
+        padding: 0.5rem 1rem;
+        top: -0.2rem;
       }
 
     }
@@ -161,7 +169,7 @@
           font-size: 0.8rem;
         }
 
-        @include respond-between(360px, 479px) {
+        @include respond-between(421px, 479px) {
           width: 5.5rem;
           height: 1.8rem;
           right: 1rem;
@@ -169,6 +177,25 @@
           padding: 0.3rem;
           font-size: 0.8rem;
 
+        }
+
+        @include respond-between(390px, 420px) {
+          width: 5rem;
+          height: 1.6rem;
+          padding: 0.3rem;
+          font-size: 0.8rem;
+        }
+
+        @include respond-between(350px, 389px) {
+          width: 4.4rem;
+          height: 1.6rem;
+          padding: 0.3rem;
+        }
+
+        @include respond-between(320px, 349px) {
+          width: 4rem;
+          height: 1.4rem;
+          padding: 0.3rem;
         }
 
         &-icon {
@@ -182,8 +209,8 @@
           }
 
           @include respond(mobile) {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             margin-right: 4px;
           }
         }
@@ -202,127 +229,23 @@
       }
 
       @include respond(mobile) {
-        right: 1.5rem;
+        right: 1.8rem;
+      }
+
+      @include respond-between(390px, 430px) {
+        right: 1.2rem;
+        bottom: 0.3rem;
+      }
+
+      @include respond-between(350px, 389px) {
+        right: 1rem;
+        bottom: 0.1rem;
+      }
+
+      @include respond-between(320px, 349px) {
+        right: 1rem;
+        bottom: 0;
       }
     }
   }
 }
-
-
-
-//   .hero__overlay {
-//     position: absolute;
-//     bottom: 0;
-//     right: 7rem;
-//     z-index: 2;
-
-//     @include respond(mobile) {
-//       right: 1rem;
-//     }
-
-//       .hero__learn-more {
-//       @include secondary-button;
-//   width: 22rem;
-//   height: 7rem;
-//   align-items: center;
-//   display: flex; // Ensures icon alignment
-
-//   /* Default values (1440px+) */
-//   bottom: 2rem;
-//   right: 8rem;
-
-//   /* Laptop (1050px - 1439px) */
-//   @include respond(laptop) {
-//     bottom: 1.5rem;
-//     right: 6rem;
-//     width: 21rem;
-//     height: 6rem;
-//   }
-
-//   /* Large tablet (850px - 1049px) */
-//   @include respond-between(850px, 1049px) {
-//     bottom: 1.2rem;
-//     right: 5rem;
-//     width: 19rem;
-//     height: 5.5rem;
-//   }
-
-//   /* Tablet (768px - 849px) */
-//   @include respond(tablet) {
-//     bottom: 1rem;
-//     right: 4.5rem;
-//     width: 15rem;
-//     height: 4rem;
-//     font-size: 1.1rem;
-//   }
-
-//   /* Small tablet (600px - 767px) */
-//   @include respond-between(600px, 767px) {
-//     bottom: 0.8rem;
-//     right: 3rem;
-//     width: 14rem;
-//     height: 3.8rem;
-//   }
-
-//   /* Mobile (480px - 599px) */
-//   @include respond(mobile) {
-//     bottom: 0.5rem;
-//     right: 1.5rem;
-//     width: 13rem;
-//     height: 3.5rem;
-//     font-size: 1rem;
-//   }
-
-//   /* Small mobile (360px - 479px) */
-//   @include respond-between(360px, 479px) {
-//     right: 1rem;
-//     width: 11rem;
-//     height: 3rem;
-//     padding: 0.5rem;
-//   }
-
-//   &-icon {
-//     width: 24px;
-//     height: 24px;
-//     margin-right: 12px;
-
-//     /* Responsive icon sizing */
-//     @include respond(tablet) {
-//       width: 20px;
-//       height: 20px;
-//       margin-right: 8px;
-//     }
-
-//     @include respond(mobile) {
-//       width: 16px;
-//       height: 16px;
-//       margin-right: 6px;
-//     }
-//   }
-// }
-
-// /* Mobile right position adjustment */
-// @include respond(mobile) {
-//   right: 1.5rem;
-// }
-//       }
-// @include respond(laptop) {
-//   top: 1rem;
-//   left: 5rem;
-//   width: 25rem;
-//   height: 8rem;
-// }
-
-// @include respond(tablet) {
-//   top: 1rem;
-//   left: 4rem;
-//   width: 18rem;
-//   height: 5.5rem;
-// }
-
-// @include respond(mobile) {
-//   top: 0.2rem;
-//   left: 0.5rem;
-//   width: 11rem;
-//   height: 3rem;
-// }
